@@ -14,8 +14,7 @@ async def on_ready():
     print("봇이 성공적으로 실행되었습니다.")
     game = discord.Game('Discord Shop 제품 판매중')
     await client.change_presence(status=discord.Status.online, activity=game)
-
-
+    
 @client.event
 async def on_message(message):
     if message.content.startswith("!색깔"):
