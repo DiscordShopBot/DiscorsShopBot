@@ -12,7 +12,7 @@ client = discord.Client()
 @client.event
 async def on_ready():
     print("봇이 성공적으로 실행되었습니다.")
-    game = discord.Game('★~하는중에 표시될 네임 작성★')
+    game = discord.Game('Discord Shop 제품 판매중')
     await client.change_presence(status=discord.Status.online, activity=game)
 
 
@@ -52,7 +52,7 @@ async def on_message(message):
         value = message.content[8:]
         embed = discord.Embed(color=selcolor)
         embed.add_field(name="\u200b", value=value, inline=False)
-        embed.set_author(name=message.author.name, icon_url=message.author.avatar_url)
+        embed.set_author(name=Discord Shop 제품, icon_url=message.author.avatar_url)
 
         await message.channel.send(embed=embed)
         await message.delete()
