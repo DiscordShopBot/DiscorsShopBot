@@ -5,6 +5,7 @@
 ###################
 
 import discord
+import os
 
 client = discord.Client()
 
@@ -57,4 +58,5 @@ async def on_message(message):
         await message.delete()
 
 
-client.run('ODAyNDM5ODY4NDI4NTgyOTEy.YAvQxQ.ktubj6kv')
+access_token = os.environ['BOT_TOKEN']
+client.run(access_token)
