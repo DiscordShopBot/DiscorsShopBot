@@ -1,20 +1,15 @@
 
-###################
-####python 3.x#####
-#discord.py==1.4.0#
-###################
-
 import discord
-import os
 
 client = discord.Client()
 
 @client.event
 async def on_ready():
     print("봇이 성공적으로 실행되었습니다.")
-    game = discord.Game('Discord Shop 제품 판매중')
+    game = discord.Game('Discord Bot 제품 판매중')
     await client.change_presence(status=discord.Status.online, activity=game)
-    
+
+
 @client.event
 async def on_message(message):
     if message.content.startswith("!색깔"):
@@ -51,11 +46,10 @@ async def on_message(message):
         value = message.content[8:]
         embed = discord.Embed(color=selcolor)
         embed.add_field(name="\u200b", value=value, inline=False)
-        embed.set_author(name=Discord Shop 제품, icon_url=message.author.avatar_url)
+        embed.set_author(name="Discord Shop 제품")
 
         await message.channel.send(embed=embed)
         await message.delete()
 
 
-access_token = os.environ['BOT_TOKEN']
-client.run(access_token)
+client.run('ODAyNDM5ODY4NDI4NTgyOTEy.YAvQXQ.ktubj6kwD9YRko8GxBudLdJpV44')
